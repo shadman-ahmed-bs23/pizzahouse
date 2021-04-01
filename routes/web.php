@@ -30,3 +30,7 @@ Route::get('/pizzas', function () {
         'name' => $name,
     ]);
 });
+
+Route::get('/pizzas/{id}', function ($id) {
+    return view('details', ['id' => $id]);
+});

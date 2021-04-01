@@ -9,5 +9,5 @@
         @endif
     @endforeach
 
-    <img src="/images/pizza-house.jpg" alt="">
+    <h1>{{ $name }}</h1>
 @endsection

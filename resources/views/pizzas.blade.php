@@ -1,13 +1,10 @@
 @extends('layouts.layout')
 
 @section('content')
-    <h2>Pizzas</h2>
+    <h2>Pizzas List</h2>
     @foreach ($pizzas as $pizza)
-        <div> {{ $loop->index }} {{ $pizza['type'] }} - {{ $pizza['base'] }} - {{ $pizza['price'] }}</div>
-        @if ($loop->first)
-            <span> - first in the loop</span>
-        @endif
+        <div>
+            {{ $pizza->name }} - {{ $pizza->type }} - {{ $pizza->base }}
+        </div>
     @endforeach
-
-    <h1>{{ $name }}</h1>
 @endsection

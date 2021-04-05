@@ -2,20 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pizza;
+
 class PizzaController extends Controller
 {
     public function index()
     {
-        $pizzas = [
-            ['type' => 'Hawaiian', 'base' => 'garlic crust', 'price' => 100],
-            ['type' => 'Italian', 'base' => 'Cheesy crust', 'price' => 250],
-            ['type' => 'Italian', 'base' => 'garlic crust', 'price' => 200],
-        ];
+        //$pizzas = Pizza::all();
+        //$pizzas = Pizza::orderBy('name')->get();
+        //$pizzas = Pizza::where('name', 'Juventus Pizza')->get();
+        $pizzas = Pizza::latest()->get();
 
-        $name = request('name');
         return view('pizzas', [
             'pizzas' => $pizzas,
-            'name' => $name,
         ]);
     }
 

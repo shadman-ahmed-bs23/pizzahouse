@@ -8,5 +8,10 @@
                 {{ $pizza->name }} - {{ $pizza->type }} - {{ $pizza->base }}
             </a>
         </div>
+        <br>
     @endforeach
+
+    <p class="message">{{ session('message') }}</p>
+    <hr>
+    <a href="/pizzas/create">Create Pizza</a>
 @endsection

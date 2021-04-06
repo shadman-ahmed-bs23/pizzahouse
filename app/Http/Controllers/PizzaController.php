@@ -13,14 +13,14 @@ class PizzaController extends Controller
         //$pizzas = Pizza::where('name', 'Juventus Pizza')->get();
         $pizzas = Pizza::latest()->get();
 
-        return view('pizzas.index', [
-            'pizzas' => $pizzas,
-        ]);
+        return view('pizzas.index', ['pizzas' => $pizzas]);
     }
 
     public function show($id)
     {
-        return view('pizzas.show', ['id' => $id]);
+        $pizza = Pizza::findOrFail($id);
+
+        return view('pizzas.show', ['pizza' => $pizza]);
     }
 
     public function create()

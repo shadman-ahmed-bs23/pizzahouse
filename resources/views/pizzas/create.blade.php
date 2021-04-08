@@ -29,5 +29,7 @@
 
             <input type="submit" value="Order pizza">
         </form>
+
+        <a href="/pizzas">Go Back</a>
     </div>
 @endsection

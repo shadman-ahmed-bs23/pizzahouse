@@ -13,6 +13,14 @@
             @endforeach
         </ul>
         </p>
+        <form action="/pizzas/delete/{{ $pizza->id }}" method="POST">
+            @csrf
+            @method('DELETE')
+            <button type="submit">
+                Complete order
+            </button>
+        </form>
+
     </div>
 
     <a href="/pizzas" class="back">Go Back</a>

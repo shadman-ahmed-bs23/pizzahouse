@@ -40,4 +40,11 @@ class PizzaController extends Controller
     {
         return view('pizzas.create');
     }
+
+    public function destroy($id)
+    {
+        $pizza = Pizza::findOrFail($id);
+        $pizza->delete();
+        return redirect('/pizzas');
+    }
 }
